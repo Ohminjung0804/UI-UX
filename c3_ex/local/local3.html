@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The Window Object</h1>
+<h2>The localStorage Property</h2>
+
+<p><button onclick="clickCounter()" type="button">Click me!</button></p>
+
+<div id="result"></div>
+
+<script>
+clickCounter();
+
+function clickCounter() {
+    if(typeof(localStorage) != "undefined"){
+        if(localStorage.clickcount){
+            localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        }else{
+            localStorage.clickcount = 1;
+        }
+        document.getElementById("result").innerHTML = "You have clickedthe button " + localStorage.clickcount + " time(s).";
+    }else{
+        document.getElementById("result").innerHTML = "Sorry, your browserdoes not support web storage...";
+    }
+    if(localStorage.clickcount > 10){
+        if(confirm('모두 지울까요?')){
+            localStorage.clear()
+        }
+    }
+
+  document.getElementById("demo").innerHTML = localStorage.clickcount;
+}
+</script>
+
+</body>
+</html>
