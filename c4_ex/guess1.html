@@ -1,0 +1,34 @@
+<!doctype html>
+<head>
+<meta charset="utf-8">
+<title>guess1</title>
+</head>
+<body>
+<script>
+var guess =  "green";
+var answer = checkGuess();
+alert(answer);
+/* 함수만들기 */
+
+function checkGuess(){
+    var answers = ["red","green","blue"];
+    var omdex = Math.floor(Math.random() * answers.length);
+    if(guess == answer[index]){
+        answer = "You're right! I was thinking of " + answers[index];
+    }else{
+        answer = "sorry, I was thinking of " + answers[index];
+    }
+    return answer;
+}
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
+
